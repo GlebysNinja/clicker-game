@@ -1,0 +1,1001 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('images/backgroundEgypt.png'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.streak {
+  width: 89px;
+  height: 89px;
+  border-radius: 15px;
+  border: solid 2.5px black;
+  background-color: #e19f3b;
+  font-family: 'URW Chancery L', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 7px;
+  font-size: 25px;
+  
+}
+
+
+
+
+
+.converterMoneyCristal {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.textConverter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.converterValuta {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.inputConverter {
+  width: 150px;
+  height: 30px;
+  border-radius: 25px;
+  border: 3px solid #555;
+  outline: none;
+  font-size: 18px;
+  padding: 0 15px;
+  transition: all 0.3s ease;
+}
+
+/* при фокусе */
+.inputConverter:focus {
+  border-color: #a259ff; /* фиолетовая рамка */
+  box-shadow: 0 0 10px #a259ff, 0 0 20px #38b6ff;
+  animation: glowCrystal 1.5s infinite alternate;
+}
+
+/* пульсация в цветах кристалла */
+@keyframes glowCrystal {
+  from {
+    box-shadow: 0 0 5px #a259ff, 0 0 10px #38b6ff;
+  }
+  to {
+    box-shadow: 0 0 20px #a259ff, 0 0 40px #38b6ff;
+  }
+}
+
+
+.valueConverter {
+  font-size: 30px;
+  background-color: #ffc379;
+  width: 140px;
+  height: 34px;
+  border-radius: 15px;
+  border: rgb(254, 212, 24) 3.5px solid;
+  text-align: center;
+
+  /* тень */
+  box-shadow: 0 4px 15px rgba(254, 212, 24, 0.8),
+              0 0 10px rgba(254, 212, 24, 0.6);
+}
+
+
+
+.imgConverter {
+  height: 40px;
+  width: 40px;
+  margin: 20px;
+
+}
+
+.converter {
+  background-color: #fdaa44;
+  display: flex;
+  justify-content: center;
+  width: 250px;
+  height: 150px;
+  border: 6px solid rgb(158, 82, 0);
+  border-radius: 20px;
+}
+
+
+
+.divButtonConvert {
+  height: 300px;
+  margin-top: 10%;
+}
+
+
+.converterValuta {
+  margin-top: 20%;
+}
+
+.streakImg {
+  height: 30px;
+  margin-left: 5px;
+}
+
+.dayStreak {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+
+.windowRebirth {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.divRebirth {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content: space-around;
+}
+
+.divButtonRebirth {
+    height: 40px;
+}
+
+
+.alertRebirth {
+  width: 350px;
+  height: 100px;
+  background-color: #00c003;
+  border: solid 6px #087200;
+  border-radius: 20px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10px;
+  font-family: 'URW Chancery L', cursive;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  font-size: 20px;
+}
+
+
+
+.rebirth {
+  height: 200px;
+  width: 250px;
+  background-color: rgb(255, 160, 35);
+  border-radius: 10px;
+  border: 7px rgb(148, 74, 21) solid;
+  font-size: 20px;
+  font-family: 'URW Chancery L', cursive;
+  display: flex;
+  justify-content: center; /* по горизонтали */
+  align-items: center;
+  flex-direction: column;
+}
+
+.rebirthText {
+    font-size: 20px;
+}
+
+.rebirthIcon {
+  background-image: url('images/iconRebirth.png');
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  right: 30px;
+  bottom: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+.island {
+  background-image: url('images/backgroundIslandEgypt.png');
+  background-size: contain;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  margin-right: 60px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.god {
+  height: 300px;
+  margin-bottom: 140px;
+  margin-right: 20px;
+  cursor: pointer;
+  -webkit-user-drag: none; 
+
+}
+
+.hp {
+  color: rgb(223, 0, 0);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 40px;
+  width: 150px;
+}
+
+
+.scale {
+  transform: scale(0.85);
+}
+
+
+
+.upgrades {
+  width: 650px;
+  height: 540px;
+  background-color: rgb(217, 130, 36);
+  border-radius: 0 0 10px 10px;
+  border: 7px rgb(148, 74, 21) solid;
+  overflow: auto;
+  
+}
+
+.upgrades::-webkit-scrollbar {
+  display: none; 
+}
+
+.upgrade {
+  width: 94%;
+  height: 74px;
+  border-radius: 15px;
+  border: solid 2.5px black;
+  background-color: #e19f3b;
+  font-family: 'URW Chancery L', cursive;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.buyUpgrades {
+  background-color: rgb(255, 218, 125);
+  width: 80px;
+  height: 35px;
+  border: solid 2px black;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.text {
+  font-size: 30px;
+}
+
+
+
+.tabsLeft {
+  display: flex;
+  gap: 7px;
+  flex-direction: column;
+  margin-top: 7.3%;
+}
+
+.tabsTop {
+  display: flex;
+  gap: 7px;
+
+}
+
+
+
+.upgradeTab {
+  height: 45px;
+  width: 45px;
+  background-color: rgb(217, 130, 36); 
+  border: 7px rgb(148, 74, 21) solid;
+  border-radius: 5px 5px 0 0;
+  border-bottom: none;
+}
+
+.upgradeTabLeft {
+  height: 45px;
+  width: 45px;
+  background-color: rgb(217, 130, 36); 
+  border: 7px rgb(148, 74, 21) solid;
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+}
+
+.setings {
+  width: 50px;
+  height: 50px;
+  margin: 20px;
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+}
+
+.hide {
+  display: none;
+}
+
+
+.main {
+  display: flex;
+}
+
+.valuta {
+  display: flex;
+  align-items: center;       /* Центрирует по вертикали */
+  justify-content: center;   /* Центрирует по горизонтали */
+  height: 45px;
+  width: 100px;
+  background-color: rgb(217, 130, 36); 
+  border: 7px rgb(148, 74, 21) solid;
+  border-radius: 5px 5px 0 0;
+  border-bottom: none;
+  font-size: 25px;
+  color: white;
+}
+
+
+.cristal {
+  margin-left: 14%;
+  margin-right: 10px;
+}
+
+.countValuta {
+  margin: 0;
+  padding: 0;
+}
+
+.moneyImg,
+.cristalImg {
+  width: 25px;
+  height: 25px;
+  margin: 0 10px 0 0;
+}
+
+.countDeathsGods {
+  /* position: absolute;
+  right: 340px;
+  top: 60px; */
+  margin-bottom: 20px;
+  width: 110px;
+  height: 20px;
+  color: rgb(168, 168, 168);
+  font-size: 38px;
+}
+
+.skull {
+  height: 35px;
+  width: 35px;
+  margin-left: 5px;
+}
+
+.windowSetings {
+  height: 350px;
+  width: 400px;
+  border: 7px rgb(148, 74, 21) solid;
+  background-color: rgb(217, 130, 36);
+  border-radius: 20px;
+  position: absolute;
+
+}
+
+.seting {
+  font-size: 27px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.volume {
+  margin: 20px;
+  margin-left: 80px;
+}
+
+
+
+.mapGame {
+  width: 65%;
+  height: 90%;
+  background-image: url('images/mapGame.png'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  border: 10px rgb(7, 0, 132) solid;
+  border-radius: 40px;
+}
+
+
+
+.location {
+  height: 40px;
+  width: 40px;
+  position: absolute; 
+  border: 3px solid black;
+  border-radius: 30px;
+}
+
+.Greece {
+  left: 32%;
+  top: 51.5%;
+  background-color: #1abd0f;
+}
+
+.info {
+  opacity: 0;
+  height: 270px;
+  width: 250px;
+  position: absolute;
+  border: 3px solid black;
+  border-radius: 15px;
+  transition: opacity 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 20px;
+    border: 7px rgb(148, 74, 21) solid;
+  background-color: rgb(217, 130, 36);
+  
+}
+
+.table {
+  background-color: #e19f3b;
+  border: rgb(178, 86, 0) 3px solid;
+  border-radius: 15px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.infoGreece {
+  left: 38%;
+  top: 50%;
+
+}
+
+.infoScandinavia {
+    left: 58%;
+    top: -3%;
+}
+
+.infoEgypt {
+    left: 80%;
+    top: 43%;
+
+}
+
+.Greece:hover + .infoGreece {
+  opacity: 1;
+}
+
+.Scandinavia:hover + .infoScandinavia {
+  opacity: 1;
+}
+
+.Egypt:hover + .infoEgypt {
+  opacity: 1;
+}
+
+
+.Scandinavia {
+  left: 52%;
+  top: 27%;
+  background-color: #69fff7;
+}
+
+.Egypt {
+  left: 73%;
+  top: 45%;
+  background-color: #fbea2c;
+}
+
+.map {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  height: 60px;
+}
+
+
+.range {
+  width: 200px;
+  height: 10px;
+  margin: 0;
+  background-color: #ffa595;
+  border-radius: 3px;
+  appearance: none;
+}
+
+.range::-webkit-slider-thumb {
+  width: 10px;
+  height: 10px;
+  background-color: #bb2509;
+  appearance: none;
+}
+
+.range::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background-color: #bb2509;
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+}
+
+
+
+
+
+/* Основные стили для "дорожки" ползунка */
+input[type="range"] {
+  /* Убираем стандартные стили браузера */
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* Размеры и внешний вид */
+  width: 250px;
+  height: 12px;
+
+  /* Динамический градиент, который создает эффект заполнения */
+  /* Используем CSS-переменную для отслеживания положения ползунка */
+  --thumb-pos: 50%;
+  background: linear-gradient(90deg, #d45938, #a03c20);
+  
+  /* Теперь "дорожка" будет заполнена градиентом только до положения ползунка */
+  background-size: var(--thumb-pos) 100%;
+  background-repeat: no-repeat;
+  background-color: #332822; /* Цвет "пустой" части дорожки, теперь темный коричневый */
+  
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+
+  /* Эффект свечения */
+  box-shadow: 0 0 8px rgba(212, 89, 56, 0.5);
+}
+
+/* Эффект при наведении на "дорожку" */
+input[type="range"]:hover {
+  box-shadow: 0 0 15px rgba(212, 89, 56, 0.8);
+}
+
+/* Стили для "ползунка" (thumb) - кружка */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* Размеры и внешний вид */
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  border-radius: 50%;
+
+  /* Добавляем градиентную рамку */
+  border: 4px solid transparent;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(90deg, #d45938, #a03c20);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+  /* Более выразительная тень */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+
+  /* Плавные переходы и трансформация */
+  transition: all 0.2s ease;
+}
+
+/* Эффект при наведении на "ползунок" */
+input[type="range"]::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 15px rgba(212, 89, 56, 0.7);
+}
+
+/* Эффект при активном состоянии (перетаскивании) */
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.2);
+  background-color: #f0f0ff;
+}
+
+/* Стили для Firefox (чтобы было единообразно) */
+input[type="range"]::-moz-range-track {
+  background: #332822;
+  border-radius: 10px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  border-radius: 50%;
+  border: 4px solid #d45938;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Стили для Firefox с заполнением */
+input[type="range"]::-moz-range-progress {
+  background: linear-gradient(90deg, #d45938, #a03c20);
+  height: 12px;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.button:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 35, 35);
+  border-radius: 10rem;
+  z-index: -2;
+}
+
+.button:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #b90000; /* darken(#0cf, 15%) */
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+
+.button:hover {
+  color: #fff;
+}
+
+.button:hover:before {
+  width: 100%;
+}
+
+/* optional reset */
+.button {
+  font-family: Arial;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  padding-top: 15px;
+}
+
+
+
+.i {
+  position: absolute;
+  left: 100%;
+  top: 2%;
+  font-size: 60px;
+  background-color: #f5a930df;
+  border-radius: 15px;
+  width: 40px;
+  height: 75px;
+  text-align: center;
+}
+
+
+.divInfo {
+  background-color: #fcb156;
+  border: #a25900 solid 6px;
+  border-radius: 20px;
+  width: 250px;
+  height: 320px;
+  position: absolute;
+  left: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.textEgg {
+  font-size: 40px;
+  font-family: 'URW Chancery L', cursive;
+}
+
+.itemEgg {
+  margin: 10px;
+}
+
+.itemEggs {
+  width: 50px;
+  
+}
+
+
+.skill {
+  background-size: cover;
+  width: 65px;
+  height: 65px;
+  border-radius: 15px;
+  /* background-color: gray; */
+  border-radius: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    color: white;
+  font-size: 30px;
+  
+}
+
+.fire {
+  /* background-image: url('images/fire.png'); */
+  background:  
+    url("images/fire.png");
+    background-size: cover;
+}
+
+
+.toxic {
+  background-image: url('images/toxic.png');
+}
+.lightning {
+  background-image: url('images/lightning.png');
+}
+.tornado {
+  background-image: url('images/tornado.png');
+}
+
+.darkness {
+  background-image: url('images/darkness.png');
+}
+
+.invisibility {
+  background-image: url('images/invisibility.png');
+}
+
+.upgradeSkill {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.buttonBuyEgg {
+  position: absolute;
+  bottom: 10%;
+  left: 43.5%;
+  height: 40px;
+  width: 200px;
+
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  background: #00be00;
+  box-shadow: 0 5px 0 #058c00;
+  cursor: pointer; /* чтобы курсор был как у кнопки */
+  font-size: 16px; /* чтобы текст был читаемее */
+}
+
+.buttonBuyEgg:hover {
+  background: #058c00;
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+.reward {
+  height: 200px;
+  width: 400px;
+  position: absolute;
+  background-color: rgb(233, 165, 76);
+  border: #a25900 6px solid;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'URW Chancery L', cursive;
+}
+
+.textReward {
+  font-size: 100px;
+}
+
+.imgReward {
+  height: 100px;
+  margin: 5px;
+  margin-left: 20px;
+}
+
+.exitReward {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 20px;
+}
+
+
+.notEnough {
+  width: 250px;
+  height: 100px;
+  background-color: #ef2222;
+  border: solid 6px #9a0000;
+  border-radius: 20px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10px;
+  font-family: 'URW Chancery L', cursive;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+    
+    /* .upgrade {
+      display: flex;
+      justify-content: space-between;
+      }
+      
+      .buyUpgrades {
+        margin-right: 15px;
+        }
+        
+        .text {
+          margin-left: 15px;
+          } */
+          
+
+.notEnoughCoins {
+  font-size: 22px;
+}
+
+.notEnoughCristal {
+  font-size: 18px;
+}
+
+* {
+  user-select: none;
+}
+
+.show {
+  opacity: 1;
+}
+          
+          
+.hide {
+  display: none;
+}
+
+.scales {
+  transform: scale(0.5);
+  transition: transform 0.2s ease;
+}
+
+
+
+.buttonConvert {
+  position: relative;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #11998e, #38ef7d);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* свечение при наведении */
+.buttonConvert:hover {
+  box-shadow: 0 0 15px #38ef7d, 0 0 30px #11998e;
+  transform: scale(1.05);
+}
+
+/* эффект нажатия */
+.buttonConvert:active {
+  transform: scale(0.95);
+}
+
+/* анимированный фон */
+.buttonConvert::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.4), transparent, rgba(255,255,255,0.4));
+  transform: skewX(-25deg);
+  transition: left 0.5s;
+  z-index: -1;
+}
+
+.buttonConvert:hover::before {
+  left: 100%;
+}
+
+
+
+.buttonRebirth {
+  position: relative;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #ff4d4d, #ff1a1a);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* свечение при наведении */
+.buttonRebirth:hover {
+  box-shadow: 0 0 15px #ff4d4d, 0 0 30px #ff1a1a;
+  transform: scale(1.05);
+}
+
+/* эффект нажатия */
+.buttonRebirth:active {
+  transform: scale(0.95);
+}
+
+/* анимированный фон */
+.buttonRebirth::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.4), transparent, rgba(255,255,255,0.4));
+  transform: skewX(-25deg);
+  transition: left 0.5s;
+  z-index: -1;
+}
+
+.buttonRebirth:hover::before {
+  left: 100%;
+}

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Clicker of Legends</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="images/olimp.png" type="image/png">
+</head>
+
+<body>
+  <script src="js/converter.js" defer></script>
+  <script src="js/clickDamage.js" defer ></script>
+  <script src="js/critDamage.js" defer></script>
+  <script src="js/earnOflline.js" defer></script>
+  <script src="js/chanceCritDamage.js" defer></script>
+  <script src="js/chanceExtraCristal.js" defer></script>
+  <script src="js/chanceFallCristal.js" defer></script>
+  <script src="js/extraMoney.js" defer></script>
+  <script src="js/taskMakeClick.js" defer></script>
+  <script src="js/tasksKillMonster.js" defer></script>
+  <script src="js/totalTimeInGame.js" defer></script>
+  <script src="js/skills.js" defer></script>
+  <script src="js/rebirth.js" defer></script>
+  <script src="js/money.js" defer></script>
+  <script src="js/checkMoney.js" defer></script>
+  <script src="js/showMessageMoney.js" defer></script>
+  <script src="js/showMessageCristal.js" defer></script>
+  <script src="js/showMessageRebirth.js" defer></script>
+  <script src="js/setItems.js" defer></script>
+  <script src="js/upradesAndTabs.js" defer></script>
+  <script src="js/settingsMusic.js" defer></script>
+
+
+
+  <img src="images/map.png" alt="" class="map">
+  <div class="mapGame hide">
+    <div class="Greece location"></div>
+    <div class="infoGreece info">
+      <div class="table">Локация: Греция</div>
+      <div class="table">Стоимость: Бесплатно</div>
+      <div class="table">Сложность: Легкая</div>
+      <div class="table">Боссы не атакують</div>
+      <div class="table">Нету возрождения</div>
+    </div>
+    <div class="Scandinavia location"></div>
+    <div class="infoScandinavia info" value="20000">
+      <div class="table">Локация: Скандинавия</div>
+      <div class="table">Стоимость: 20K</div>
+      <div class="table">Сложность: Нормальная</div>
+      <div class="table">Боссы атакують слабо</div>
+      <div class="table">Можно возродится</div>
+    </div>
+    <div class="Egypt location"></div>
+    <div class="infoEgypt info" value="150000">
+      <div class="table">Локация: Египет</div>
+      <div class="table">Стоимость: 150K</div>
+      <div class="table">Сложность: Сложная</div>
+      <div class="table">Боссы атакують сильно</div>
+      <div class="table">Можно возродится</div>
+    </div>
+</div>
+    <audio id="bg-music" src="music/background.mp3" autoplay loop muted></audio>
+    <audio id="sound" src="music/click.mp3"></audio>
+    
+
+
+        <!-- taskCheckKillMonsterEasy--;
+        document.querySelector('.taskCountKillMonsterEasy').textContent = taskCheckKillMonsterEasy;
+        if (taskCheckKillMonsterEasy <= 0) {
+            localStorage.setItem('taskCountKillMonsterEasy', taskKillMonsterEasy[Math.floor(Math.random() * taskKillMonsterEasy.length)])
+            document.querySelector('.taskCountKillMonsterEasy').textContent = parseInt(localStorage.getItem('taskCountKillMonsterEasy'));;
+            countMoney = parseInt(localStorage.getItem('countMoney'))
+            //Увеличиваем
+            countMoney += countKillMonsterForTaskEasy;
+            console.log(countKillMonsterForTaskEasy)
+            //Записываем на сайт
+            countMoneySpan.textContent = countMoney ;
+            //Сохраняем
+            localStorage.setItem('countMoney', countMoney)
+            taskCheckKillMonsterEasy  = countKillMonsterForTaskEasy = document.querySelector('.taskCountKillMonsterEasy').textContent = taskKillMonsterEasy[Math.floor(Math.random() * taskKillMonsterEasy.length)]
+        } -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="main">
+    <div class="tabsLeft">
+      <img src="images/converter.png" class="upgradeTabLeft tab6" alt="">
+      <img src="images/rebirth.png" class="upgradeTabLeft tab7" alt="">
+    </div>
+    <div class="menu">
+      <div class="tabsTop">
+        <img src="images/upgrade.png" class="upgradeTab tab1" alt="">
+        <img src="images/statistic.png" class="upgradeTab tab2" alt="">
+        <img src="images/task.png" class="upgradeTab tab3" alt="">
+        <img src="images/achievement.png" class="upgradeTab tab4" alt="">
+        <img src="images/skills.png" class="upgradeTab tab5" alt="">
+        <div class="valuta cristal"><img src="images/cristal.png" alt="" class="cristalImg"><span class="countValuta countCristal"></span></div>
+        <div class="valuta money"><img src="images/money.png" alt="" class="moneyImg"><span class="countValuta countMoney"></span></div>
+      </div>
+      <div class="upgrades upgrades1">
+        <div class="upgrade clickDamageSpan"><span class="text" style="font-size: 35px;">Сила клика <span class="countDamageSpanStart"></span>-><span class="countDamageSpanEnd"></span></span><div class=" buyUpgrades buyUpgradesDamageSpan"><img src="images/money.png" alt="" class="moneyImg"><span class="buyUpgradesCountDamageSpan">10</span></div></div>
+        <div class="upgrade earnCoinSpan"><span class="text" style="font-size: 33px;">Заработок оффлайн до <span class="countEarnCoinSpanStart"></span>-><span class="countEarnCoinSpanEnd"></span></span><div class="buyUpgrades buyUpgradesEarnCoinSpan"><img src="images/money.png" alt="" class="moneyImg"><span class="buyUpgradesCountEarnCoinSpan">10</span></div></div>
+        <div class="upgrade chanceCritDamage"><span class="text" style="font-size: 33px;">Шанс крит. урона <span class="countChanceCritDamageStart"></span>-><span class="countChanceCritDamageEnd"></span></span><div class="buyUpgrades buyUpgradesChanceCritDamageSpan"><img src="images/money.png" alt="" class="moneyImg"><span class="buyUpgradesCountChanceCritDamageSpan">10</span></div></div>
+        <div class="upgrade critDamage"><span class="text" style="font-size: 35px;">Сила крит. клика <span class="countCritDamageStart"></span>-><span class="countCritDamageEnd"></span></span><div class="buyUpgrades buyUpgradesCritDamageSpan"><img src="images/money.png" alt="" class="moneyImg"><span class="buyUpgradesCountCritDamageSpan">10</span></div></div> 
+        <div class="upgrade crystalFall"><span class="text" style="font-size: 30px;">Шанс кристаллов <span class="countCrystalFallSpanStart"></span>-><span class="countCrystalFallSpanEnd"></span></span><div class="buyUpgrades buyUpgradesCrystalFallSpan"><img src="images/money.png" alt="" class="moneyImg"><span class="buyUpgradesCountCrystalFall">10</span></div></div>
+        <div class="upgrade extraCristal"><span class="text" style="font-size: 30px;">Шанс доп. кристаллов <span class="countExtraCristalSpanStart"></span>-><span class="countExtraCristalSpanEnd"></span></span><div class="buyUpgrades buyUpgradesExtraCristalSpan"><img src="images/money.png" alt="" class="moneyImg"><span class="buyUpgradesCountExtraCristalSpan">10</span></div></div>
+        <div class="upgrade extraMoney"><span class="text" style="font-size: 30px;">Шанс доп. монет <span class="countExtraMoneySpanStart"></span>-><span class="countExtraMoneySpanEnd"></span></span><div class="buyUpgrades buyUpgradesExtraMoneySpan"><img src="images/money.png" alt="" class="moneyImg"><span class="buyUpgradesCountExtraMoneySpan">10</span></div></div>
+    </div>
+    <div class="upgrades upgrades2 hide">
+        <div class="upgrade"><span class="text" style="font-size: 28px;">Шанс выпадение доп. кристаллов: <span class="chanceFallCristal"></span></span></div>
+        <div class="upgrade"><span class="text" style="font-size: 28px;">Шанс выпадение доп. кристаллов: <span class="chanceExtraCristal"></span></span></div>
+        <div class="upgrade"><span class="text" style="font-size: 28px;">Шанс выпадение доп. монет: <span class="chanceExtraMoney"></span> </span></div>
+        <div class="upgrade"><span class="text" style="font-size: 25px;">Количество выпадение доп. кристаллов: <span class="countFallCristal"></span></span></div>
+        <div class="upgrade"><span class="text" style="font-size: 28px;">Количество выпадение доп. монет: <span class="countExtraMoney"></span> </span></div>
+        <div class="upgrade"><span class="text">Текущий уровень: <span class="currentLevel"></span> </span></div>
+        <div class="upgrade"><span class="text"> <span class="totalTimeInGame"></span> </span></div>
+        <div class="upgrade"><span class="text">Количество кликов: <span class="numberOfClicks"></span></span></div>
+        <div class="upgrade"><span class="text">Текущий опыт: </span></div>
+        <div class="upgrade"><span class="text">Пройдено уровней: <span class="levelsCompleted"></span></span></div>
+        <div class="upgrade"><span class="text">Всего заработано монет: <span class="totalMoney"></span></span></div>
+        <div class="upgrade"><span class="text">Всего зделанных убийств: <span class="countKillGods"></span></span></div>
+        <div class="upgrade"><span class="text">Всего убитых боссов: 0</span></div>
+    </div>
+        <div class="upgrades upgrades3 hide">
+        <div class="upgrade taskKillMonsterEasy"><span class="text">Убить <span class="taskCountKillMonsterEasy"></span> богов</span></div>
+        <div class="upgrade taskKillMonsterMedium"><span class="text">Убить <span class="taskCountKillMonsterMedium"></span> богов</span></div>
+        <div class="upgrade taskKillMonsterHard"><span class="text">Убить <span class="taskCountKillMonsterHard"></span> богов</span></div>
+        <div class="upgrade taskEarnMoneyEasy"><span class="text">Заработать <span class="taskCountEarnMoneyEasy"></span> монет</span></div>
+        <div class="upgrade taskEarnMoneyMedium"><span class="text">Заработать <span class="taskCountEarnMoneyMedium"></span> монет</span></div>
+        <div class="upgrade taskEarnMoneyHard"><span class="text">Заработать <span class="taskCountEarnMoneyHard"></span> монет</span></div>
+        <div class="upgrade taskEarnCristalEasy"><span class="text">Заработать <span class="taskCountEarnCristalEasy"></span> кристаллов</span></div>
+        <div class="upgrade taskEarnCristalMedium"><span class="text">Заработать <span class="taskCountEarnCristalMedium"></span> кристаллов</span></div>
+        <div class="upgrade taskEarnCristalHard"><span class="text">Заработать <span class="taskCountEarnCristalHard"></span> кристаллов</span></div>
+    </div>
+    <div class="upgrades upgrades4 hide">
+        <div class="upgrade"><span class="text taskKillMonster10">Убить 10 монстров</span></div>
+        <div class="upgrade"><span class="text taskKillMonster50">Убить 50 монстров</span></div>
+        <div class="upgrade"><span class="text taskKillMonster100">Убить 100 монстров</span></div>
+        <div class="upgrade"><span class="text taskKillMonster500">Убить 500 монстров</span></div>
+        <div class="upgrade"><span class="text taskKillMonster1000">Убить 1000 монстров</span></div>
+        <div class="upgrade"><span class="text taskKillBoss">Убить 10 боссов</span></div>
+        <div class="upgrade"><span class="text taskKillBoss">Убить 50 боссов</span></div>
+        <div class="upgrade"><span class="text taskKillBoss">Убить 100 боссов</span></div>
+        <div class="upgrade"><span class="text taskKillBoss">Убить 500 боссов</span></div>
+        <div class="upgrade"><span class="text taskKillBoss">Убить 1000 боссов</span></div>
+        <div class="upgrade"><span class="text taskEarnMoney10">Заработать 10 монет</span></div>
+        <div class="upgrade"><span class="text taskEarnMoney50">Заработать 50 монет</span></div>
+        <div class="upgrade"><span class="text taskEarnMoney100">Заработать 100 монет</span></div>
+        <div class="upgrade"><span class="text taskEarnMoney500">Заработать 500 монет</span></div>
+        <div class="upgrade"><span class="text taskEarnMoney1000">Заработать 1000 монет</span></div>
+        <div class="upgrade"><span class="text taskMakeClick10">Зделать 10 кликов</span></div>
+        <div class="upgrade"><span class="text taskMakeClick50">Зделать 50 кликов</span></div>
+        <div class="upgrade"><span class="text taskMakeClick100">Зделать 100 кликов</span></div>
+        <div class="upgrade"><span class="text taskMakeClick500">Зделать 500 кликов</span></div>
+        <div class="upgrade"><span class="text taskMakeClick1000">Зделать 1000 кликов</span></div>
+        <div class="upgrade"><span class="text taskPassLevels">Пройти 10 уровней</span></div>
+        <div class="upgrade"><span class="text taskPassLevels">Пройти 50 уровней</span></div>
+        <div class="upgrade"><span class="text taskPassLevels">Пройти 100 уровней</span></div>
+        <div class="upgrade"><span class="text taskPassLevels">Пройти 500 уровней</span></div>
+        <div class="upgrade"><span class="text taskPassLevels">Пройти 1000 уровней</span></div>
+    </div>
+    <div class="upgrades upgrades5 hide">
+      <div class="upgrade upgradeSkill ">
+        <div class="skill fire"></div>
+        <span class="text textFire" style="font-size: 25px;">Заблокировано</span>
+      </div>
+      <div class="upgrade upgradeSkill ">
+        <div class="skill toxic"></div>
+        <span class="text textToxic" style="font-size: 25px;">Заблокировано.</span>
+        </div>
+        <div class="upgrade upgradeSkill ">
+          <div class="skill lightning"></div>
+          <span class="text textLightning" style="font-size: 25px;">Заблокировано.</span>
+        </div>
+        <div class="upgrade upgradeSkill ">
+          <div class="skill tornado"></div>
+          <span class="text textTornado" style="font-size: 25px;">Заблокировано.</span>
+        </div>
+        <div class="upgrade upgradeSkill ">
+          <div class="skill darkness"></div>
+          <span class="text textDarkness" style="font-size: 25px;">Заблокировано.</span>
+        </div>
+        <div class="upgrade upgradeSkill ">
+          <div class="skill invisibility"></div>
+          <span class="text textInvisibility" style="font-size: 25px;">Заблокировано.</span>
+        </div>
+      </div>      
+   <div class="converterMoneyCristal upgrades upgrades6 hide">
+        <div class="converterValuta">
+          <div class="converter"><span class="textConverter"><img src="images/cristal.png" alt="" class="imgConverter"><input type="text" class="inputConverter"></span></div>
+          <div class="converter"><span class="textConverter"><img src="images/money.png" alt="" class="imgConverter"><div class="valueConverter"></div></span></div>       
+        </div>
+        <div  class="divButtonConvert">
+          <button class="buttonConvert">Конвертировать</button>
+        </div>
+      </div>      
+    <div class="windowRebirth upgrades upgrades7 hide">
+      <div class="divRebirth">
+        <div class="rebirth">
+         <span class="rebirthText">Монеты с моба: <span class="coinsFromMobStart"></span></span>
+         <span class="rebirthText">Стартовые монеты: <span class="startingCoinsStart">0</span></span>
+         <span class="rebirthText">Cила клика: <span class="clickDamageStart"></span></span>
+       </div>
+        <div class="rebirth">
+         <span class="rebirthText">Монеты с моба: <span class="coinsFromMobEnd"></span></span>
+         <span class="rebirthText">Стартовые монеты: <span class="startingCoinsEnd">10</span></span>
+         <span class="rebirthText">Cила клика: <span class="clickDamageEnd"></span></span>
+         <span class="rebirthText unlockSkill"></span>
+         <span class="rebirthText unlockLocation"></span>
+       </div>     
+      </div>
+      <div class="divButtonRebirth">
+        <button class="buttonRebirth">Перерождение</button>
+      </div>
+       
+   </div>
+  </div>
+      <img  src="images/setings.png" alt="" class="setings">
+    </div>
+    <div class="island">
+      <div class="countDeathsGods"><b><span class="countDeaths"></span>/10</b><img src="images/skull.png" alt="" class="skull"></div>
+      <div class="hp"><b><span class="hpText"></span> HP</b></div>
+      <img src="images/gera.png" class="god" alt="">
+    </div>
+    
+    
+    <div class="windowSetings hide">
+      <div class="seting">Громкость фоновой музыки</div>  
+      <input type="range" id="volume" class="volume"  min="0" max="1" step="0.01" value="1"> 
+      <div class="seting">Громкость клика</div>
+      <input type="range" id="volume2"  class="volume" min="0" max="1" step="0.01" value="1">     
+    <div class="seting">Язык игры</div>
+  </div>
+  <div class="rebirth hide">
+    <div class="moreCash"><span class="startCash"></span> -> <span class="endCash"></span></div> 
+    <div class="priceRebirth"><span class="startPriceRebirth"></span>/<span class="endPriceRebirth"></span></div>
+    <div class="container">
+      <a href="#" class="button buttonRebirth">Rebirth</a>
+    </div>
+  </div>
+  <div class="notEnough notEnoughCoins">
+    Недостаточно денег!
+  </div>
+  <div class="notEnough notEnoughCristal">
+    Недостаточно кристаллов!
+  </div>
+  <div class="alertRebirth">
+    Перерождение успешно зделано!
+  </div>
+
+
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
