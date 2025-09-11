@@ -13,6 +13,12 @@ let buyUpgradesCountChanceCritDamageSpan = document.querySelector('.buyUpgradesC
 let countChanceCritDamageStart = document.querySelector('.countChanceCritDamageStart')
 let countChanceCritDamageEnd = document.querySelector('.countChanceCritDamageEnd')
 
+
+
+let percent = Math.floor(chanceCritDamage * 100);
+let criticalDamageChance = document.querySelector('.criticalDamageChance')
+criticalDamageChance.textContent = percent + '%';
+
 //Записываем на сайт
 countChanceCritDamageStart.textContent = chanceCritDamage * 100 + '%';
 countChanceCritDamageEnd.textContent = (chanceCritDamage + 0.01) * 100 + '%';
@@ -45,8 +51,10 @@ buyUpgradesChanceCritDamageSpan.addEventListener('click', function() {
         countChanceCritDamageStart.textContent = Math.floor(chanceCritDamage * 100) + '%';
         countChanceCritDamageEnd.textContent = Math.floor((chanceCritDamage + 0.01) * 100) + '%';
         //Сохраняем
+        criticalDamageChance = document.querySelector('.criticalDamageChance')
+        criticalDamageChance.textContent = percent + '%';
+
         localStorage.setItem('chanceCritDamage', chanceCritDamage)
-        let percent = Math.floor(chanceCritDamage * 100);
         // alert(`Шанс крит. урона: ${percent}%`);
     } else {
         showMessageMoney();

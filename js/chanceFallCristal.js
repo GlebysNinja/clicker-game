@@ -56,9 +56,8 @@ buyUpgradesCrystalFallSpan.addEventListener('click', function() {
 
 //Устанавливаем данные доп. кристалов
 let crystalFall = document.querySelector('.crystalFall')
-let countFallCristalSpan = document.querySelector('.countFallCristal')
+
 
 
 
 chanceFallCristalSpan.textContent = chanceFallCristal*100 + '%';
-countFallCristalSpan.textContent = countFallCristal;

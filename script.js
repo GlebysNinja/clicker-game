@@ -12,78 +12,11 @@ let mythologyEgypt = localStorage.getItem('mythologyEgypt');
 
 
 
-// localStorage.setItem('taskKillMonsterEasy', 5)
-// localStorage.setItem('taskKillMonsterMedium', 40)
-// localStorage.setItem('taskKillMonsterHard', 100)
-
-let taskKillMonsterEasy = [5, 10, 15];
-let taskKillMonsterMedium = [40, 50, 60];
-let taskKillMonsterHard = [100, 125, 150];
-
-let countKillMonsterForTaskEasy = parseInt(localStorage.getItem('taskKillMonsterEasy'));
-let countKillMonsterForTaskMedium = parseInt(localStorage.getItem('taskKillMonsterMedium'));
-let countKillMonsterForTaskHard = parseInt(localStorage.getItem('taskKillMonsterHard'));
+let clickPower = document.querySelector('.clickPower') 
+clickPower.textContent = localStorage.getItem('clickDamage');
 
 
-document.querySelector('.taskCountKillMonsterEasy').textContent = countKillMonsterForTaskEasy;
-document.querySelector('.taskCountKillMonsterMedium').textContent = countKillMonsterForTaskMedium;
-document.querySelector('.taskCountKillMonsterHard').textContent = countKillMonsterForTaskHard;
-
-let taskCheckKillMonsterEasy = parseInt(localStorage.getItem('taskKillMonsterEasy'))
-let taskCheckKillMonsterMedium = parseInt(localStorage.getItem('taskKillMonsterMedium'))
-let taskCheckKillMonsterHard = parseInt(localStorage.getItem('taskKillMonsterHard'))
-
-
-
-localStorage.setItem('taskEarnMoneyEasy', 5)
-localStorage.setItem('taskEarnMoneyMedium', 40)
-localStorage.setItem('taskEarnMoneyHard', 100)
-
-
-let taskEarnMoneyEasy = [5, 10, 15];
-let taskEarnMoneyMedium = [40, 50, 60];
-let taskEarnMoneyHard = [100, 125, 150];
-
-let countEarnMoneyForTaskEasy = parseInt(localStorage.getItem('taskEarnMoneyEasy'));
-let countEarnMoneyForTaskMedium = parseInt(localStorage.getItem('taskEarnMoneyMedium'));
-let countEarnMoneyForTaskHard = parseInt(localStorage.getItem('taskEarnMoneyHard'));;
-
-document.querySelector('.taskCountEarnMoneyEasy').textContent = countEarnMoneyForTaskEasy;
-document.querySelector('.taskCountEarnMoneyMedium').textContent = countEarnMoneyForTaskMedium;
-document.querySelector('.taskCountEarnMoneyHard').textContent = countEarnMoneyForTaskHard;
-
-let taskCheckEarnMoneyEasy = parseInt(localStorage.getItem('taskEarnMoneyEasy'))
-let taskCheckEarnMoneyMedium = parseInt(localStorage.getItem('taskEarnMoneyMedium'))
-let taskCheckEarnMoneyHard = parseInt(localStorage.getItem('taskEarnMoneyHard'))
-
-
-
-
-
-localStorage.setItem('taskEarnCristalEasy', 5)
-localStorage.setItem('taskEarnCristalMedium', 40)
-localStorage.setItem('taskEarnCristalHard', 100)
-
-
-let taskEarnCristalEasy = [5, 10, 15];
-let taskEarnCristalMedium = [40, 50, 60];
-let taskEarnCristalHard = [100, 125, 150];
-
-let countEarnCristalForTaskEasy = parseInt(localStorage.getItem('taskEarnCristalEasy'));
-let countEarnCristalForTaskMedium = parseInt(localStorage.getItem('taskEarnCristalMedium'));
-let countEarnCristalForTaskHard = parseInt(localStorage.getItem('taskEarnCristalHard'));
-
-
-document.querySelector('.taskCountEarnCristalEasy').textContent = countEarnCristalForTaskEasy;
-document.querySelector('.taskCountEarnCristalMedium').textContent = countEarnCristalForTaskMedium;
-document.querySelector('.taskCountEarnCristalHard').textContent = countEarnCristalForTaskHard;
-
-
-let taskCheckEarnCristalEasy = parseInt(localStorage.getItem('taskEarnCristalEasy'))
-let taskCheckEarnCristalMedium = parseInt(localStorage.getItem('taskEarnCristalMedium'))
-let taskCheckEarnCristalHard = parseInt(localStorage.getItem('taskEarnCristalHard'))
-
-
+localStorage.setItem('countCristal', 1000)
 
 
 //Массивы с изображениями богов,островов богов и заднего фона сайта
@@ -147,36 +80,17 @@ let chanceExtraMoneySpan = document.querySelector('.chanceExtraMoney')
 
 
 
-//Текущий уровень
-let currentLevel = parseInt(localStorage.getItem('currentLevel'))
-let currentLevelSpan = document.querySelector('.currentLevel')
-currentLevelSpan.textContent = currentLevel + 1
-
-
-
-//Уровней пройдено
-let levelsCompleted = localStorage.getItem('levelsCompleted')
-let levelsCompletedSpan = document.querySelector('.levelsCompleted')
-levelsCompletedSpan.textContent = levelsCompleted;
-
-
-//Устанавливаем количество смертей в хранилище и на сайт
-localStorage.setItem('countDeaths', 0)
-let countDeaths = parseInt(localStorage.getItem('countDeaths'))
-let countDeathsSpan = document.querySelector('.countDeaths')
-countDeathsSpan.textContent = countDeaths;
-// localStorage.setItem('countMoney', 0)
 
 
 
 
 
 
-//Устанавливам количество кристалов в хранилище и на сайт
-localStorage.setItem('countCristal', 50)
-let countCristal = localStorage.getItem('countCristal')
-let countCristalSpan = document.querySelector('.countCristal')
-countCristalSpan.textContent = countCristal;
+
+
+
+
+
 
 
 
@@ -237,6 +151,15 @@ taskEarnMoney.forEach(task => {
 // let taskMakeClick = document.querySelector('.taskMakeClick')
 // let taskPassLevels = document.querySelector('.taskPassLevels')
 
+
+
+//Устанавливам количество кристалов в хранилище и на сайт
+localStorage.setItem('countCristal', 5000)
+let countCristal = localStorage.getItem('countCristal')
+let countCristalSpan = document.querySelector('.countCristal')
+countCristalSpan.textContent = countCristal;
+
+
 //Получение уровня игры,хп бога
 let lvlGodsIslands = parseInt(localStorage.getItem('lvlGodsIslands'));
 let lvlGods = parseInt(localStorage.getItem('lvlGods'));
@@ -261,7 +184,7 @@ god.addEventListener('click', function () {
     levelsCompleted = parseInt(localStorage.getItem('levelsCompleted')) || 0;
     levelsCompletedSpan.textContent = levelsCompleted;
 
-    currentLevelSpan.textContent = currentLevel + 1;
+    // currentLevelSpan.textContent = currentLevel + 1;
 
     numberOfClicks = parseInt(localStorage.getItem('numberOfClicks')) || 0;
     numberOfClicks++;
@@ -511,8 +434,8 @@ god.addEventListener('click', function () {
         });
 
         // Увеличиваем текущий уровень
-        currentLevel++;
-        localStorage.setItem('currentLevel', currentLevel);
+        // currentLevel++;
+        // localStorage.setItem('currentLevel', currentLevel);
 
         // Проверяем, если количество смертей кратно 10 - повышаем уровень богов и обнуляем счетчик смертей
         if (countDeaths > 0 && countDeaths % 2 === 0) {
@@ -522,8 +445,6 @@ god.addEventListener('click', function () {
 
             lvlGods++;
             localStorage.setItem('lvlGods', lvlGods);
-
-
 
             // Проверяем, достигнут ли последний уровень
             if (lvlGods === 9) {

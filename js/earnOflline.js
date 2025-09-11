@@ -12,6 +12,10 @@ let buyUpgradesCountEarnCoinSpan = document.querySelector('.buyUpgradesCountEarn
 let earnCoinSpan = document.querySelector('.earnCoinSpan')
 let countEarnCoinSpanStart = document.querySelector('.countEarnCoinSpanStart')
 let countEarnCoinSpanEnd = document.querySelector('.countEarnCoinSpanEnd')
+let offlineEarnings = document.querySelector('.ofllineEarnings')
+offlineEarnings.textContent = earnCoin;
+
+
 
 //Устанавливаем значение на сайт
 countEarnCoinSpanStart.textContent = earnCoin;
@@ -45,6 +49,8 @@ buyUpgradesEarnCoinSpan.addEventListener('click' , function() {
         //Записываем
         countEarnCoinSpanStart.textContent = earnCoin;
         countEarnCoinSpanEnd.textContent = earnCoin+1;
+        offlineEarnings = document.querySelector('.ofllineEarnings')
+        offlineEarnings.textContent = earnCoin
         //Сохраняем
         localStorage.setItem('earnCoin', earnCoin)
     } else {

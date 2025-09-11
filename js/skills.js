@@ -1,9 +1,9 @@
-// localStorage.setItem('fire', 'false')
-// localStorage.setItem('toxic', 'false')
-// localStorage.setItem('lightning', 'false')
-// localStorage.setItem('tornado', 'false')
-// localStorage.setItem('darkness', 'false')
-// localStorage.setItem('invisibility', 'false')
+localStorage.setItem('fire', 'false')
+localStorage.setItem('toxic', 'false')
+localStorage.setItem('lightning', 'false')
+localStorage.setItem('tornado', 'false')
+localStorage.setItem('darkness', 'false')
+localStorage.setItem('invisibility', 'false')
 localStorage.setItem('fireDamage', 1)
 localStorage.setItem('toxicDamage', 3)
 localStorage.setItem('lightningDamage', 5)
@@ -50,54 +50,73 @@ let textTornado = document.querySelector('.textTornado')
 let textDarkness = document.querySelector('.textDarkness')
 let textInvisibility = document.querySelector('.textInvisibility')
 
+let imgFire = document.querySelector('.imgFire')
+let imgToxic = document.querySelector('.imgToxic')
+let imgLightning = document.querySelector('.imgLightning')
+let imgTornado = document.querySelector('.imgTornado')
+let imgDarkness = document.querySelector('.imgDarkness')
+let imgInvisibility = document.querySelector('.imgInvisibility')
+
+let priceFire = 200;
+let priceToxic = 400;
+let priceLightning = 600;
+let priceTornado = 800;
+let priceDarkness = 1000;
+let priceInvisibility = 1200;
+
 if (fire === 'false') {
-    textFire.textContent = 'Заблокировано'
+    textFire.textContent = 'Заблокировано. Цена: 200'
+
 } else {
     textFire.textContent = 'Навык: Огонь. Урон: 1/s. Время: 5s';
 }
 
 if (toxic === 'false') {
-    textToxic.textContent = 'Заблокировано'
+    textToxic.textContent = 'Заблокировано. Цена: 400'
 } else {
     textToxic.textContent = 'Навык: Яд. Урон: 3/s. Время: 7s';
+    imgToxic.src = '';
 }
 
 if (lightning === 'false') {
-    textLightning.textContent = 'Заблокировано'
+    textLightning.textContent = 'Заблокировано. Цена: 600'
 } else {
     textLightning.textContent = 'Навык: Молния. Урон: 5. Время: 1s';
+    imgLightning.src = '';
 }
 
 if (tornado === 'false') {
-    textTornado.textContent = 'Заблокировано'
+    textTornado.textContent = 'Заблокировано. Цена: 800'
 } else {
     textTornado.textContent = 'Навык: Торнадо. Урон: 1/s. Время: 5s';
 }
 
 if (darkness === 'false') {
-    textDarkness.textContent = 'Заблокировано'
+    textDarkness.textContent = 'Заблокировано. Цена: 1000'
 } else {
     textDarkness.textContent = 'Навык: Тьма. Урон: 7/s. Время: 7s';
+    imgDarkness.src = '';
 }
 
 if (invisibility === 'false') {
-    textInvisibility.textContent = 'Заблокировано'
+    textInvisibility.textContent = 'Заблокировано. Цена: 1200'
 } else {
     textInvisibility.textContent = 'Навык: Невидимость.';
+    imgInvisibility.src = '';
 }
 
 
 fireDiv.addEventListener('click', function () {
     countMoney = parseInt(localStorage.getItem('countMoney'))
     fire = localStorage.getItem('fire')
-    if (fire === 'false' && countMoney >= 100) {
-        countMoney -= 100;
-        countMoneySpan.textContent = countMoney;
-        localStorage.setItem('countMoney', countMoney)
+    if (fire === 'false' && countCristal >= 200) {
+        imgFire.remove();
+        setCristal(priceFire)
         textFire.textContent = 'Навык: Огонь. Урон: 1/s';
         localStorage.setItem('fire', 'true')
     }
     else if (fire === 'true') {
+        imgFire.remove();
         let reloadFire = localStorage.getItem('reloadFire')
         if (reloadFire === 'false') {
             localStorage.setItem('reloadFire', 'true')
@@ -148,14 +167,14 @@ fireDiv.addEventListener('click', function () {
 toxicDiv.addEventListener('click', function () {
     countMoney = parseInt(localStorage.getItem('countMoney'))
     toxic = localStorage.getItem('toxic')
-    if (toxic === 'false' && countMoney >= 200) {
-        countMoney -= 200;
-        countMoneySpan.textContent = countMoney;
-        localStorage.setItem('countMoney', countMoney)
+    if (toxic === 'false' && countCristal >= 400) {
+        imgToxic.remove();
+        setCristal(priceToxic)
         textToxic.textContent = 'Навык: Яд. Урон: 3/s';
         localStorage.setItem('toxic', 'true')
     }
     else if (toxic === 'true') {
+        imgToxic.remove();
         let reloadToxic = localStorage.getItem('reloadToxic')
         if (reloadToxic === 'false') {
             localStorage.setItem('reloadToxic', 'true')
@@ -205,14 +224,14 @@ toxicDiv.addEventListener('click', function () {
 lightningDiv.addEventListener('click', function () {
     countMoney = parseInt(localStorage.getItem('countMoney'))
     lightning = localStorage.getItem('lightning')
-    if (lightning === 'false' && countMoney >= 500) {
-        countMoney -= 500;
-        countMoneySpan.textContent = countMoney;
-        localStorage.setItem('countMoney', countMoney)
+    if (lightning === 'false' && countCristal >= 600) {
+        imgLightning.remove();
+        setCristal(priceLightning)
         textLightning.textContent = 'Навык: Молния. Урон: 5';
         localStorage.setItem('lightning', 'true')
     }
     else if (lightning === 'true') {
+        imgLightning.remove();
         let reloadLightning = localStorage.getItem('reloadLightning')
         if (reloadLightning === 'false') {
             localStorage.setItem('reloadLightning', 'true')
@@ -254,14 +273,14 @@ lightningDiv.addEventListener('click', function () {
 tornadoDiv.addEventListener('click', function () {
     countMoney = parseInt(localStorage.getItem('countMoney'))
     tornado = localStorage.getItem('tornado')
-    if (tornado === 'false' && countMoney >= 700) {
-        countMoney -= 700;
-        countMoneySpan.textContent = countMoney;
-        localStorage.setItem('countMoney', countMoney)
+    if (tornado === 'false' && countCristal >= 800) {
+        imgTornado.remove();
+        setCristal(priceTornado)
         textTornado.textContent = 'Навык: Торнадо. Урон: 4/s';
         localStorage.setItem('tornado', 'true')
     }
     else if (tornado === 'true') {
+        imgTornado.remove();
         let reloadTornado = localStorage.getItem('reloadTornado')
         if (reloadTornado === 'false') {
             localStorage.setItem('reloadTornado', 'true')
@@ -314,14 +333,14 @@ tornadoDiv.addEventListener('click', function () {
 darknessDiv.addEventListener('click', function () {
     countMoney = parseInt(localStorage.getItem('countMoney'))
     darkness = localStorage.getItem('darkness')
-    if (darkness === 'false' && countMoney >= 900) {
-        countMoney -= 900;
-        countMoneySpan.textContent = countMoney;
-        localStorage.setItem('countMoney', countMoney)
+    if (darkness === 'false' && countCristal >= 1000) {
+        imgDarkness.remove();
+        setCristal(priceDarkness)
         textDarkness.textContent = 'Навык: Тьма. Урон: 7/s';
         localStorage.setItem('darkness', 'true')
     }
     else if (darkness === 'true') {
+        imgDarkness.remove();
         let reloadDarkness = localStorage.getItem('reloadDarkness')
         if (reloadDarkness === 'false') {
             localStorage.setItem('reloadDarkness', 'true')
@@ -371,10 +390,9 @@ darknessDiv.addEventListener('click', function () {
 invisibilityDiv.addEventListener('click', function () {
     countMoney = parseInt(localStorage.getItem('countMoney'))
     invisibility = localStorage.getItem('invisibility')
-    if (invisibility === 'false' && countMoney >= 700) {
-        countMoney -= 700;
-        countMoneySpan.textContent = countMoney;
-        localStorage.setItem('countMoney', countMoney)
+    if (invisibility === 'false' && countCristal >= 1200) {
+        imgInvisibility.remove();
+        setCristal(priceInvisibility)
         textInvisibility.textContent = 'Навык: Невидимость. Урон: 4/s';
         localStorage.setItem('invisibility', 'true')
     }

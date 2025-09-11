@@ -53,6 +53,4 @@ buyUpgradesExtraMoneySpan.addEventListener('click', function() {
 
 //Устанавливаем данные доп. денег
 let extraMoney = document.querySelector('.extraMoney')
-let countExtraMoneySpan = document.querySelector('.countExtraMoney')
 chanceExtraMoneySpan.textContent = chanceExtraMoney*100 + '%';
-countExtraMoneySpan.textContent = countExtraMoney;

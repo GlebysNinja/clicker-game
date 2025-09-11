@@ -43,6 +43,8 @@ buyUpgradesDamageSpan.addEventListener('click', function() {
         clickDamage = parseInt(localStorage.getItem('clickDamage'))
         //Увеличиваем
         clickDamage += 10;
+        clickPower = document.querySelector('.clickPower') 
+        clickPower.textContent = clickDamage;
         //Записываем на сайт
         countDamageSpanStart.textContent = clickDamage;
         countDamageSpanEnd.textContent = clickDamage+10;

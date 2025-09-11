@@ -12,6 +12,12 @@ let buyUpgradesCountCritDamageSpan = document.querySelector('.buyUpgradesCountCr
 let countCritDamageStart = document.querySelector('.countCritDamageStart')
 let countCritDamageEnd = document.querySelector('.countCritDamageEnd')
 
+
+let criticalClickDamageChance = document.querySelector('.criticalClickDamageChance')
+criticalClickDamageChance.textContent = critDamage
+
+
+
 //Устанавливаем значение на сайт
 countCritDamageStart.textContent = critDamage;
 countCritDamageEnd.textContent = critDamage+2;
@@ -45,6 +51,8 @@ buyUpgradesCritDamageSpan.addEventListener('click', function() {
         countCritDamageStart.textContent = critDamage;
         countCritDamageEnd.textContent = critDamage+2;
         //Сохраняем
+        criticalClickDamageChance = document.querySelector('.criticalClickDamageChance')
+        criticalClickDamageChance.textContent = critDamage      
         localStorage.setItem('critDamage', critDamage)
     } else {
         showMessageMoney();

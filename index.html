@@ -24,6 +24,7 @@
   <script src="js/skills.js" defer></script>
   <script src="js/rebirth.js" defer></script>
   <script src="js/money.js" defer></script>
+  <script src="js/cristal.js" defer></script>
   <script src="js/checkMoney.js" defer></script>
   <script src="js/showMessageMoney.js" defer></script>
   <script src="js/showMessageCristal.js" defer></script>
@@ -31,6 +32,14 @@
   <script src="js/setItems.js" defer></script>
   <script src="js/upradesAndTabs.js" defer></script>
   <script src="js/settingsMusic.js" defer></script>
+  <script src="js/taskEarnCristal.js" defer></script>
+  <script src="js/taskKillMonster.js" defer></script>
+  <script src="js/taskEarnMoney.js" defer></script>
+  <!-- <script src="js/currentLevel.js" defer></script> -->
+  <script src="js/levelsCompleted.js" defer></script>
+  <script src="js/countDeaths.js" defer></script>
+  <script src="js/navigationForGreece.js" defer></script>
+
 
 
 
@@ -68,33 +77,6 @@
     
 
 
-        <!-- taskCheckKillMonsterEasy--;
-        document.querySelector('.taskCountKillMonsterEasy').textContent = taskCheckKillMonsterEasy;
-        if (taskCheckKillMonsterEasy <= 0) {
-            localStorage.setItem('taskCountKillMonsterEasy', taskKillMonsterEasy[Math.floor(Math.random() * taskKillMonsterEasy.length)])
-            document.querySelector('.taskCountKillMonsterEasy').textContent = parseInt(localStorage.getItem('taskCountKillMonsterEasy'));;
-            countMoney = parseInt(localStorage.getItem('countMoney'))
-            //Увеличиваем
-            countMoney += countKillMonsterForTaskEasy;
-            console.log(countKillMonsterForTaskEasy)
-            //Записываем на сайт
-            countMoneySpan.textContent = countMoney ;
-            //Сохраняем
-            localStorage.setItem('countMoney', countMoney)
-            taskCheckKillMonsterEasy  = countKillMonsterForTaskEasy = document.querySelector('.taskCountKillMonsterEasy').textContent = taskKillMonsterEasy[Math.floor(Math.random() * taskKillMonsterEasy.length)]
-        } -->
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="main">
     <div class="tabsLeft">
       <img src="images/converter.png" class="upgradeTabLeft tab6" alt="">
@@ -111,7 +93,7 @@
         <div class="valuta money"><img src="images/money.png" alt="" class="moneyImg"><span class="countValuta countMoney"></span></div>
       </div>
       <div class="upgrades upgrades1">
-        <div class="upgrade clickDamageSpan"><span class="text" style="font-size: 35px;">Сила  <span class="countDamageSpanStart"></span>-><span class="countDamageSpanEnd"></span></span><div class=" buyUpgrades buyUpgradesDamageSpan"><img src="images/money.png" alt="" class="moneyImg"><span class="buyUpgradesCountDamageSpan">10</span></div></div>
+        <div class="upgrade clickDamageSpan"><span class="text" style="font-size: 35px;">Сила клика <span class="countDamageSpanStart"></span>-><span class="countDamageSpanEnd"></span></span><div class=" buyUpgrades buyUpgradesDamageSpan"><img src="images/money.png" alt="" class="moneyImg"><span class="buyUpgradesCountDamageSpan">10</span></div></div>
         <div class="upgrade earnCoinSpan"><span class="text" style="font-size: 33px;">Заработок оффлайн до <span class="countEarnCoinSpanStart"></span>-><span class="countEarnCoinSpanEnd"></span></span><div class="buyUpgrades buyUpgradesEarnCoinSpan"><img src="images/money.png" alt="" class="moneyImg"><span class="buyUpgradesCountEarnCoinSpan">10</span></div></div>
         <div class="upgrade chanceCritDamage"><span class="text" style="font-size: 33px;">Шанс крит. урона <span class="countChanceCritDamageStart"></span>-><span class="countChanceCritDamageEnd"></span></span><div class="buyUpgrades buyUpgradesChanceCritDamageSpan"><img src="images/money.png" alt="" class="moneyImg"><span class="buyUpgradesCountChanceCritDamageSpan">10</span></div></div>
         <div class="upgrade critDamage"><span class="text" style="font-size: 35px;">Сила крит. клика <span class="countCritDamageStart"></span>-><span class="countCritDamageEnd"></span></span><div class="buyUpgrades buyUpgradesCritDamageSpan"><img src="images/money.png" alt="" class="moneyImg"><span class="buyUpgradesCountCritDamageSpan">10</span></div></div> 
@@ -120,19 +102,18 @@
         <div class="upgrade extraMoney"><span class="text" style="font-size: 30px;">Шанс доп. монет <span class="countExtraMoneySpanStart"></span>-><span class="countExtraMoneySpanEnd"></span></span><div class="buyUpgrades buyUpgradesExtraMoneySpan"><img src="images/money.png" alt="" class="moneyImg"><span class="buyUpgradesCountExtraMoneySpan">10</span></div></div>
     </div>
     <div class="upgrades upgrades2 hide">
-        <div class="upgrade"><span class="text" style="font-size: 28px;">Шанс выпадение доп. кристаллов: <span class="chanceFallCristal"></span></span></div>
+        <div class="upgrade"><span class="text" style="font-size: 35px;">Сила клика: <span class="clickPower"></span></span></div>
+        <div class="upgrade"><span class="text" style="font-size: 35px;">Заработок оффлайн: <span class="ofllineEarnings"></span></span></div>
+        <div class="upgrade"><span class="text" style="font-size: 35px;">Шанс крит. урона: <span class="criticalDamageChance"></span></span></div>
+        <div class="upgrade"><span class="text" style="font-size: 35px;">Сила крит. клика: <span class="criticalClickDamageChance"></span></span></div>
+        <div class="upgrade"><span class="text" style="font-size: 28px;">Шанс выпадение кристаллов: <span class="chanceFallCristal"></span></span></div>
         <div class="upgrade"><span class="text" style="font-size: 28px;">Шанс выпадение доп. кристаллов: <span class="chanceExtraCristal"></span></span></div>
         <div class="upgrade"><span class="text" style="font-size: 28px;">Шанс выпадение доп. монет: <span class="chanceExtraMoney"></span> </span></div>
-        <div class="upgrade"><span class="text" style="font-size: 25px;">Количество выпадение доп. кристаллов: <span class="countFallCristal"></span></span></div>
-        <div class="upgrade"><span class="text" style="font-size: 28px;">Количество выпадение доп. монет: <span class="countExtraMoney"></span> </span></div>
-        <div class="upgrade"><span class="text">Текущий уровень: <span class="currentLevel"></span> </span></div>
         <div class="upgrade"><span class="text"> <span class="totalTimeInGame"></span> </span></div>
         <div class="upgrade"><span class="text">Количество кликов: <span class="numberOfClicks"></span></span></div>
-        <div class="upgrade"><span class="text">Текущий опыт: </span></div>
         <div class="upgrade"><span class="text">Пройдено уровней: <span class="levelsCompleted"></span></span></div>
         <div class="upgrade"><span class="text">Всего заработано монет: <span class="totalMoney"></span></span></div>
         <div class="upgrade"><span class="text">Всего зделанных убийств: <span class="countKillGods"></span></span></div>
-        <div class="upgrade"><span class="text">Всего убитых боссов: 0</span></div>
     </div>
         <div class="upgrades upgrades3 hide">
         <div class="upgrade taskKillMonsterEasy"><span class="text">Убить <span class="taskCountKillMonsterEasy"></span> богов</span></div>
@@ -151,11 +132,6 @@
         <div class="upgrade"><span class="text taskKillMonster100">Убить 100 монстров</span></div>
         <div class="upgrade"><span class="text taskKillMonster500">Убить 500 монстров</span></div>
         <div class="upgrade"><span class="text taskKillMonster1000">Убить 1000 монстров</span></div>
-        <div class="upgrade"><span class="text taskKillBoss">Убить 10 боссов</span></div>
-        <div class="upgrade"><span class="text taskKillBoss">Убить 50 боссов</span></div>
-        <div class="upgrade"><span class="text taskKillBoss">Убить 100 боссов</span></div>
-        <div class="upgrade"><span class="text taskKillBoss">Убить 500 боссов</span></div>
-        <div class="upgrade"><span class="text taskKillBoss">Убить 1000 боссов</span></div>
         <div class="upgrade"><span class="text taskEarnMoney10">Заработать 10 монет</span></div>
         <div class="upgrade"><span class="text taskEarnMoney50">Заработать 50 монет</span></div>
         <div class="upgrade"><span class="text taskEarnMoney100">Заработать 100 монет</span></div>
@@ -166,36 +142,53 @@
         <div class="upgrade"><span class="text taskMakeClick100">Зделать 100 кликов</span></div>
         <div class="upgrade"><span class="text taskMakeClick500">Зделать 500 кликов</span></div>
         <div class="upgrade"><span class="text taskMakeClick1000">Зделать 1000 кликов</span></div>
-        <div class="upgrade"><span class="text taskPassLevels">Пройти 10 уровней</span></div>
-        <div class="upgrade"><span class="text taskPassLevels">Пройти 50 уровней</span></div>
-        <div class="upgrade"><span class="text taskPassLevels">Пройти 100 уровней</span></div>
-        <div class="upgrade"><span class="text taskPassLevels">Пройти 500 уровней</span></div>
-        <div class="upgrade"><span class="text taskPassLevels">Пройти 1000 уровней</span></div>
     </div>
     <div class="upgrades upgrades5 hide">
       <div class="upgrade upgradeSkill ">
         <div class="skill fire"></div>
-        <span class="text textFire" style="font-size: 25px;">Заблокировано</span>
+        <span>
+          <span class="text textFire" style="font-size: 25px;"></span>
+            <img src="images/cristal.png" alt="" class="imgSkill imgFire">
+        </span>
       </div>
       <div class="upgrade upgradeSkill ">
         <div class="skill toxic"></div>
-        <span class="text textToxic" style="font-size: 25px;">Заблокировано.</span>
+        <span>
+          <span class="text textToxic" style="font-size: 25px;"></span>
+          <img src="images/cristal.png" alt="" class="imgSkill imgToxic">
+        </span>
+
         </div>
         <div class="upgrade upgradeSkill ">
           <div class="skill lightning"></div>
-          <span class="text textLightning" style="font-size: 25px;">Заблокировано.</span>
+          <span>
+            <span class="text textLightning" style="font-size: 25px;"></span>
+            <img src="images/cristal.png" alt="" class="imgSkill imgLightning">
+          </span>
         </div>
         <div class="upgrade upgradeSkill ">
           <div class="skill tornado"></div>
-          <span class="text textTornado" style="font-size: 25px;">Заблокировано.</span>
+          <span>
+            <span class="text textTornado" style="font-size: 25px;"></span>
+            <img src="images/cristal.png" alt="" class="imgSkill imgTornado">
+          </span>
+
         </div>
         <div class="upgrade upgradeSkill ">
           <div class="skill darkness"></div>
-          <span class="text textDarkness" style="font-size: 25px;">Заблокировано.</span>
+          <span>
+            <span class="text textDarkness" style="font-size: 25px;"></span>
+            <img src="images/cristal.png" alt="" class="imgSkill imgDarkness">
+          </span>
+
         </div>
         <div class="upgrade upgradeSkill ">
           <div class="skill invisibility"></div>
-          <span class="text textInvisibility" style="font-size: 25px;">Заблокировано.</span>
+          <span>
+            <span class="text textInvisibility" style="font-size: 25px;"></span>
+            <img src="images/cristal.png" alt="" class="imgSkill imgInvisibility">
+          </span>
+
         </div>
       </div>      
    <div class="converterMoneyCristal upgrades upgrades6 hide">
